@@ -1,0 +1,453 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway:300,400,700,900');
+
+* {
+  box-sizing: border-box;
+  transition: all ease-in-out 300ms;
+  margin: 0;
+  padding: 0;
+}
+body {
+  margin: 0;
+  font-family: 'Raleway', sans-serif;
+  text-align: center;
+}
+img {
+  max-width: 100%;
+  height: auto;
+}
+@media (max-size: 59rem){
+  .container {
+    width: 95%;
+    margin: 0 auto;
+  }
+}
+
+.clearfix::after,
+section::after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+
+/* typography */
+
+h1 {
+  font-weight: 300;
+  font-size: 1.5rem;
+  margin-top: 0;
+}
+
+/* header */
+.logo {
+  width: 400px;
+  height: 100px;
+}
+header {
+  position: absolute;
+  margin-top: 1em;
+  left: 0;
+  right: 0;
+  padding: .2em;
+  color: #FFF;
+}
+nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+nav li {
+  display: inline-block;
+  margin: 1em;
+}
+nav a {
+  font-weight: 900;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: .9rem;
+  color: #000;
+  padding: .5em;
+/*  outline: .1em solid white; */ /* outline around buttons currently disabled */
+  color: #FFF;
+}
+nav a:hover,
+nav a:focus {
+  color: #DDD;
+}
+/* home-hero */
+.home-hero {
+  background-image: url(../img/sunrise.jpg);
+  padding: 10em 0em;
+  /*width: 100%;*/
+  background-size: cover;
+  background-position: center;
+  color: #FFF;
+}
+.quote {
+  padding: 1em 1.5em;
+  font-size: 1.5rem;
+  font-weight: 400;
+  position: relative;
+  bottom: 10rem;
+  color: #FFF;
+}
+@media (min-width: 60rem) {
+  nav {
+    float: right;
+  }
+  .logo {
+    float: left;
+    display: inline-block;
+    padding: 1em;
+    margin: -1.6em;
+  }
+  .home-hero {
+    height: 100vh;
+    padding-top: 35vh;
+  }
+}
+@media (max-width: 59em) { /*  */
+  nav a {
+    position: relative;
+    top: 3em;
+  }
+  nav li {
+    padding: 0;
+    margin: .5em;
+  }
+  .quote {
+    display: none;
+  }
+}
+@media (max-width: 47em) {
+  nav a {
+    display: inline-block;
+    font-size: .7rem;
+  }
+}
+@media (max-width: 21em) {
+  nav a {
+    display: inline-block;
+    font-size: .6rem;
+  }
+}
+/* end of home-hero and header section */
+
+
+/* whoIAm section / whoIAm + whoIAm-textbox */
+
+.whoIAm {
+  background-color: #232323;
+  padding: 3em;
+  color: #FFF;
+  width: 100vw;
+}
+
+.whoIAm-textbox {
+  outline: 2px solid white;
+  outline-offset: 1.5em;
+  position: relative;
+
+}
+.whoIAm-textbox h1 {
+  position: absolute;
+  top: -1.6em;
+  background-color: #232323;
+  padding: 0 .5em;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+@media (max-width: 25rem) {
+  h1 {
+    font-size: 1.4em;
+  }
+  .whoIAm-textbox h1 {
+    padding: 0 .22em;
+    top: -1.7em;
+  }
+}
+
+@media (min-width: 65em) {
+  h1 {
+    font-weight: 300;
+    font-size: 2.5rem;
+    margin-top: .8em;
+  }
+  .whoIAm {
+    background-image: url(../img/usna_pep.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100vw;
+    padding: 15em;
+    color: #000;
+
+  }
+
+  .whoIAm-textbox {
+    font-weight: 400;
+    background-color: rgba(255, 255, 255, 0.5);
+    position: relative;
+    padding: 3em;
+    width: 25em;
+    margin-left: -7.5%;
+    font-size: 1.5em;
+    outline: 2px solid black;
+    outline-offset: -1.5em;
+    transform: translateY(-70%);
+  }
+
+  .whoIAm-textbox h1 {
+    display: none;
+  /*  HIDDEN DUE TO IT BEING BROKEN
+    background-color: transparent;
+    font-weight: 700;
+    font-size: 2.5rem;
+    text-align: left;
+    left: 50%;
+    top: .75em;
+    transform: translateX(15%);
+    transform: translateY(-110%);
+    padding: 0 .15; */
+  }
+  .whoIAm-textbox p {
+    transform: translateY(-5%);
+  }
+}
+
+/* end of whoIAm section */
+
+
+
+/* beginning of resume section */
+
+/* this section defines the style for the collapsible buttons */
+/* this next section is for all phone sizes */
+.resume {
+  background-color: #232323;
+}
+.collapsible {
+  background-color: #232323;
+  color: white;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: center;
+  outline: none;
+  font-size: 15px;
+}
+.resumeList h1 {
+  background-color: #232323;
+  transform: translateY(15%);
+  color: white;
+  padding: 1em;
+}
+.active, .collapsible:hover {
+  background-color: #232323;
+}
+
+.content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+  background-color: #5b5b5b;
+  color: #FFF;
+}
+.content p {
+  margin-top: 1.2em;
+  margin-bottom: 1.2em;
+}
+.col-1 ul {
+  list-style: none;
+  margin-top: 1.2em;
+  margin-bottom: 1.2em;
+}
+/* end of section */
+
+@media (min-width: 60rem) { /*for ipads and larger */
+  .resume {
+    background-image: url(../img/bs_cove.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    padding: 15em;
+  }
+  .resumeList {
+    width: 40em;
+    transform: translate(-12em, 6em)
+  }
+  .resumeList h1 {
+    color: black;
+    text-align: left;
+    width: 27%;
+    height: -1.5em;
+    padding: 0 .22em;
+    transform: translateY(0%);
+    font-size: 2em;
+    background-color: transparent;
+  }
+  .collapsible {
+    background: rgba(255, 255, 255, .7);
+    color: black;
+    cursor: pointer;
+    padding: .8em;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: 2px solid black;
+    font-size: 1.5em;
+  }
+  .col-1 ul {
+    list-style: none;
+  }
+  .active, .collapsible:hover {
+    background: rgba(255, 255, 255, .7);
+  }
+  .content {
+    padding: 0 18px;
+    max-height: 0;
+    overflow: hidden;
+    transition: 300ms ease-in-out;
+    background: rgba(255, 255, 255, .7);
+    color: black;
+    text-align: left;
+  }
+}
+
+/* end of collapsible section */
+
+/* start of catalog section */
+
+.catalog-item img {
+  display: block;
+}
+
+.catalog-item {
+  margin: 0;
+  position: relative;
+}
+
+.catalog-desc {
+  position: absolute;
+  z-index: 100;
+  top: 0em;
+  right: 0em;
+  left: 0em;
+  color: black;
+  background: rgba(255, 255, 255, .7);
+  padding: .2em;
+}
+
+.catalog-desc p {
+  padding-top: .2em;
+  padding-bottom: .2em;
+}
+
+/* grid of 2 */
+@media (min-width: 37rem) {
+  .catalog-item {
+    width: 50%;
+    float: left;
+  }
+  .catalog-desc p {
+    font-size: .9em;
+  }
+}
+/* grid of 3 */
+@media (min-width: 60rem) {
+  .catalog-item {
+    width: 33.3333334%;
+  }
+}
+/* make the desc slide into view upon hover for computers */
+@media (min-width: 65rem) {
+  .catalog-item {
+      overflow: hidden;
+  }
+  .catalog-desc {
+    top: auto;
+    bottom: 0em;
+    transform: translateY(100%);
+
+  }
+  .catalog-item:hover .catalog-desc {
+    transform: translateY(0%);
+  }
+}
+/* end of catalog section */
+
+
+/* start of contact section */
+
+.contact {
+  background-color: #232323;
+  color: white;
+  margin: 0;
+}
+.contact img {
+  width: 30%;
+  height: 30%;
+  display: inline-block;
+  transform: translateY(2%);
+}
+.contact h1 {
+  margin: 0;
+}
+.contact p {
+  margin: 0;
+  padding: 2em;
+  transform: translateY(-10%);
+}
+
+@media (min-width: 48rem) {
+  .contact h1 {
+    font-size: 2em;
+  }
+  .contact p {
+    font-size: 1.2em;
+  }
+}
+
+@media (min-width: 63rem) {
+  .contact-me h1 {
+    font-size: 3em;
+    transform: translateY(35%);
+  }
+  .contact-me p {
+    font-size: 2em;
+  }
+}
+
+
+/* scroll to top */
+#scroll {
+    z-index: 100;
+    position:fixed;
+    right:10px;
+    bottom:10px;
+    cursor:pointer;
+    width:50px;
+    height:50px;
+    background-color:#5b5b5b;
+    text-indent:-9999px;
+    display:none;
+    -webkit-border-radius:60px;
+    -moz-border-radius:60px;
+    border-radius:60px
+}
+#scroll span {
+    position:absolute;
+    top:50%;
+    left:50%;
+    margin-left:-8px;
+    margin-top:-12px;
+    height:0;
+    width:0;
+    border:8px solid transparent;
+    border-bottom-color:#ffffff;
+}
+#scroll:hover {
+    background-color:#4f4f4f;
+    opacity:1;filter:"alpha(opacity=100)";
+    -ms-filter:"alpha(opacity=100)";
+}

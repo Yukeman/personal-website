@@ -1,0 +1,225 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nicholas Fritsch</title>
+<link href="css/styles.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+
+<body>
+
+<!-- button to go back to top -->
+<a href="#" id="scroll" style="display: none;"><span></span></a>
+
+  <header>
+    <img src="img/logo.png" alt="logo" class="logo">
+    <nav>
+      <ul>
+        <li><a href="#whoIAm">Who I Am</a></li>
+        <li><a href="#resume">Resume</a></li>
+        <li><a href="#catalog">Catalog</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+<section class="home-hero">
+  <div class="container">
+    <p class="quote">Yes: <strong>I am a dreamer.</strong> For a dreamer is one who can find his way by moonlight, and his punishment is that he sees the dawn before the rest of the world.<br>
+    </br> <strong><i>~Oscar Wilde</i><strong></p>
+  </div>
+</section>
+
+
+
+<div class="container">
+  <section class="whoIAm" id="whoIAm">
+    <div class="whoIAm-textbox">
+      <h1>Who I Am</h1>
+      <p>I am an accomplished and dependable individual with a solid history of achievement during my time at the Naval Academy and its Preparatory School. Also, I am a motivated leader with strong organizational and prioritization abilities who is able to overcome a multitude of challenges.
+      </p>
+    </div>
+  </section>
+</div>
+
+<!-- resume section with collapsible buttons -->
+<div class="container">
+  <section class="resume" id="resume">
+
+    <section class="resumeList">
+    <h1> <strong>Resume</strong> </h1>
+      <div class="col-1">
+        <button class="collapsible">Experience</button>
+        <div class="content">
+          <p>Midshipman, United States Navy; Annapolis, MD - May ‘18-Aug ’18<br>
+    </br>Midshipman Candidate, United States Navy; Newport, RI - Jul ‘17-May ’18<br>
+    </br>Umpire, Rochester Hills Little League; Rochester, MI - Mar ‘14-May ’17</p>
+        </div>
+      </div>
+
+      <div class="col-1">
+        <button class="collapsible">Education</button>
+        <div class="content">
+          <p>US Naval Academy Preparatory School; Newport, RI<br>
+    </br>Stoney Creek High School; Rochester, MI</p>
+        </div>
+      </div>
+
+  <!-- **** need to remember to align the bottom three to the right in the CSS -->
+      <div class="col-1">
+        <button class="collapsible">Skills</button>
+        <div class="content">
+          <ul class="unstyled-list">
+            <li>Leadership</li>
+            <li>Computer Proficiency</li>
+            <li>Troubleshooting</li>
+            <li>Writing</li>
+            <li>Time Management</li>
+            <li>Problem Solving</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="col-1">
+        <button class="collapsible">Volunteering</button>
+        <div class="content">
+          <p>Waltonwood Senior Care Center<br>
+    </br>Saint Andrew Catholic Church Religious Ed Program & Vacation Bible School<br>
+    </br>Battleship Cove in Fall River, Massachusetts</p>
+        </div>
+      </div>
+    </section>
+  </section>
+</div>
+
+<!-- NEED TO SCALE IMAGES TO SCREEN USING CSS-->
+<section class="catalog" id="catalog">
+    <!-- catalog item 1-->
+    <figure class="catalog-item">
+      <img src="img/catalog-1.jpg" alt="catalog item">
+      <figcaption class="catalog-desc">
+      <p>Fire alarm onboard NAVSTA Newport, RI</p>
+      </figcaption>
+    </figure>
+    <!-- catalog item 2-->
+    <figure class="catalog-item">
+      <img src="img/catalog-2.jpg" alt="catalog item">
+      <figcaption class="catalog-desc">
+      <p>The National Ensign onbard NAVSTA Newport, RI</p>
+      </figcaption>
+    </figure>
+    <!-- catalog item 3-->
+    <figure class="catalog-item">
+      <img src="img/catalog-3.jpg" alt="catalog item">
+      <figcaption class="catalog-desc">
+      <p>Tutshi River Canyon in Northern British Columbia</p>
+      </figcaption>
+    </figure>
+    <!-- catalog item 4-->
+    <figure class="catalog-item">
+      <img src="img/catalog-4.jpg" alt="catalog item">
+      <figcaption class="catalog-desc">
+      <p>Juneau Ice Fields</p>
+      </figcaption>
+    </figure>
+    <!-- catalog item 5-->
+    <figure class="catalog-item">
+      <img src="img/catalog-5.jpg" alt="catalog item">
+      <figcaption class="catalog-desc">
+      <p>Small plane on Skagway, AK's, airstrip</p>
+      </figcaption>
+    </figure>
+    <!-- catalog item 6-->
+    <figure class="catalog-item">
+      <img src="img/catalog-6.jpg" alt="catalog item">
+      <figcaption class="catalog-desc">
+      <p>Mountain Range that surrounds Skagway, AK</p>
+      </figcaption>
+    </figure>
+
+</section>
+
+
+<section class="contact" id="contact">
+  <figure class="contact-me">
+    <img src="img/me.png" alt="contact pic">
+    <div class="contact-info">
+      <h1>Contact Me</h1>
+      <p>C: (248) 310-0208 <br>
+      </br>E: NicholasLFritsch@gmail.com</p>
+  </div>
+  </figure>
+</section>
+
+
+<!-- this section defines the javascript for the collapsible buttons -->
+<script>
+var coll = document.getElementsByClassName("collapsible");
+var i;
+
+for (i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var content = this.nextElementSibling;
+    if (content.style.maxHeight){
+      content.style.maxHeight = null;
+    } else {
+      content.style.maxHeight = content.scrollHeight + "px";
+    }
+  });
+}
+
+
+
+
+</script>
+<!-- smooth scrolling javascript -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+  // Add smooth scrolling to all links
+  $("a").on('click', function(event) {
+
+    // Make sure this.hash has a value before overriding default behavior
+    if (this.hash !== "") {
+      // Prevent default anchor click behavior
+      event.preventDefault();
+
+      // Store hash
+      var hash = this.hash;
+
+      // Using jQuery's animate() method to add smooth page scroll
+      // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+      $('html, body').animate({
+        scrollTop: $(hash).offset().top
+      }, 800, function(){
+
+        // Add hash (#) to URL when done scrolling (default click behavior)
+        window.location.hash = hash;
+      });
+    } // End if
+  });
+});
+
+
+$(document).ready(function(){
+    $(window).scroll(function(){
+        if ($(this).scrollTop() > 100) {
+            $('#scroll').fadeIn();
+        } else {
+            $('#scroll').fadeOut();
+        }
+    });
+    $('#scroll').click(function(){
+        $("html, body").animate({ scrollTop: 0 }, 800);
+        return false;
+    });
+});
+
+</script>
+
+</body>
+</html>
